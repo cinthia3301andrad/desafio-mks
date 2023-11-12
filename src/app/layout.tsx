@@ -4,7 +4,7 @@ import { Montserrat } from 'next/font/google'
 
 import { DefaultLayout } from '@/layouts/DefaultLayout'
 import StyledComponentsRegistry from '@/lib/registry_styled_components'
-import { Header } from './components/Header'
+import { Header } from '../components/Header'
 
 
 const montserrat = Montserrat({

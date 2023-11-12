@@ -15,6 +15,8 @@ export const ContainerHeader = styled.div`
   ${({ theme }) => css`
     ${theme.breakpoints.sm} {
       max-height: 190px;
+      padding: 10px 30px;
+      height: 70px;
     }
   `}
 `
@@ -71,4 +73,10 @@ export const ButtonCart = styled.button`
     font-weight: 700;
     line-height: normal;
   }
+  ${({ theme }) => css`
+    ${theme.breakpoints.sm} {
+      width: 70px;
+  height: 35px;
+    }
+  `}
 `

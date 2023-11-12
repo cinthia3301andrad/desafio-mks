@@ -48,13 +48,13 @@ export const GlobalStyles = createGlobalStyle`
   ${({ theme }) => css`
     ${theme.breakpoints.lg} {
       html {
-        font-size: 40%;
+        font-size: 45%;
       }
     }
 
     ${theme.breakpoints.md} {
       html {
-        font-size: 35%;
+        font-size: 40%;
       }
     }
   `}

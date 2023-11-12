@@ -12,6 +12,8 @@ export const ContainerMain = styled.main`
   background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
+ 
+ align-items: center;
   min-height: 100vh;
-  margin-left: 95px;
+ padding: 50px 25px;
 `
