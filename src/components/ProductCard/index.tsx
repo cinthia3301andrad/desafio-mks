@@ -28,7 +28,8 @@ const ProductCard: React.FC<Product> = ({
       description,
       brand,
       createdAt,
-      updatedAt
+      updatedAt,
+      quantity: 1
     })
   }
   return (

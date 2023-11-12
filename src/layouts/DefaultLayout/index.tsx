@@ -14,6 +14,7 @@ import { CartProvider } from '@/context/CartContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/ReactToastify.min.css'
 import { MenuRight } from '@/components/MenuRight'
+import { Footer } from '@/components/Footer'
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,6 +29,7 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
             <MenuRight/>
 
             <S.ContainerMain>{children}</S.ContainerMain>
+            <Footer/>
           </S.ContainerDefaultLayout>
         </CartProvider>
       </QueryClientProvider>
