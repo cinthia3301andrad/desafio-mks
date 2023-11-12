@@ -13,6 +13,7 @@ import { CartProvider } from '@/context/CartContext'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/ReactToastify.min.css'
+import { MenuRight } from '@/components/MenuRight'
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,6 +25,7 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
           <GlobalStyles />
           <S.ContainerDefaultLayout>
             <Header />
+            <MenuRight/>
 
             <S.ContainerMain>{children}</S.ContainerMain>
           </S.ContainerDefaultLayout>
