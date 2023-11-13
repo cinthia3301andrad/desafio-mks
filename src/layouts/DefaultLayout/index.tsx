@@ -17,7 +17,6 @@ import { darkTheme, theme } from '@/styles/theme'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   const { theme: currentTheme } = useTheme()
-  console.log('kk', currentTheme, currentTheme === 'light' )
   return (
 
       <StyledThemeProvider theme={currentTheme === 'light' ? theme : darkTheme}>
