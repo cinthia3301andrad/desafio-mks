@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import { toast } from 'react-toastify'
 
-interface CartContextType {
+export interface CartContextType {
   items: Product[]
   isOpenMenu: boolean
   addItem: (item: Product) => void
@@ -19,7 +19,7 @@ interface CartContextType {
   closeMenu: () => void
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined)
+export const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   const [items, setItems] = useState<Product[]>([])

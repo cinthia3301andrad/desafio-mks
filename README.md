@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nome da Aplicação
 
-## Getting Started
+Esta aplicação é uma loja online desenvolvida como parte de um desafio técnico. O objetivo principal é consumir uma API REST de produtos para exibir a lista de produtos da loja e gerenciar um carrinho de compras.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Loja**: Apresenta uma lista de produtos obtidos da API, com um shimmer/skeleton implementado durante o carregamento dos dados.
+- **Carrinho**: Permite aos usuários adicionar produtos, ajustar quantidades e visualizar o total.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 13**: Framework baseado em React para uma construção otimizada e eficiente.
+- **React Query**: Gerenciamento eficiente de estados e cache de dados assíncronos.
+- **Styled-Components**: Uso de CSS-in-JS para estilos dinâmicos e reutilizáveis.
+- **Jest e Testing Library**: Para testes unitários confiáveis e manutenção de um código limpo e funcional.
+- **Context API**: Gerenciamento de estado global para o carrinho de compras.
+- **React Toastify**: Para notificações interativas e feedback do usuário.
+- **TypeScript**: Linguagem de programação para adicionar tipagem estática ao JavaScript, aumentando a legibilidade e confiabilidade do código.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Estrutura da Aplicação
 
-## Learn More
+- `ProductList`: Componente que gerencia a exibição da lista de produtos.
+- `ProductCard`: Componente para exibir informações individuais do produto.
+- `ProductSkeleton`: Componente de UI para estado de carregamento.
+- `CartContext`: Contexto para gerenciamento do estado do carrinho.
+- `CartProvider`: Provider do contexto para encapsular a aplicação.
+- `useCart`: Hook personalizado para acessar e manipular o estado do carrinho.
 
-To learn more about Next.js, take a look at the following resources:
+## Executando o Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para rodar o projeto localmente, siga os seguintes passos:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone o repositório.
+2. Instale as dependências com `npm install` ou `yarn`.
+3. Inicie o servidor de desenvolvimento com `npm run dev` ou `yarn dev`.
+4. Acesse `http://localhost:3000` no seu navegador.
 
-## Deploy on Vercel
+## Testes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Execute os testes unitários com `npm test` ou `yarn test`. A cobertura de testes inclui componentes chave e lógica de negócios.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+
+A aplicação está hospedada em [Link do Deploy] - sinta-se à vontade para visitar e explorar a versão online da loja.

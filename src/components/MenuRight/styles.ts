@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContainerMenuRight = styled.div<{ isOpen: boolean }>`
+export const ContainerMenuRight = styled.div<{ isOpenMenu: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
@@ -10,7 +10,7 @@ export const ContainerMenuRight = styled.div<{ isOpen: boolean }>`
   background-color: ${({ theme }) => theme.colors.primary};
 
   transform: ${(props) =>
-    props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
+    props.isOpenMenu ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 
