@@ -13,7 +13,7 @@ const ProductCardItem: React.FC<Product> = ({
   price,
   photo
 }) => {
-  const { decrementItemQuantity, incrementItemQuantity, getItemCount } =
+  const { decrementItemQuantity, incrementItemQuantity, getItemCount, removeItem } =
     useCart()
 
 
@@ -31,6 +31,7 @@ const ProductCardItem: React.FC<Product> = ({
           <S.ProductPrice>{formatPriceToBRL(price)}</S.ProductPrice>
         </div>
       </S.ProductInfo>
+    <S.ButtonRemove onClick={() => removeItem(id)}>X</S.ButtonRemove>
     </S.ProductCardItemContainer>
   )
 }

@@ -12,7 +12,7 @@ export const ProductCardItemContainer = styled.div`
   max-width: 379px;
   height: 95px;
   width: 100%;
-
+  position: relative;
 `
 
 export const ProductImage = styled.img`
@@ -60,7 +60,7 @@ export const ButtonsAddDel = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 8px;
+  /*  padding: 10px 8px; */
   border-radius: 4px;
   border: 0.3px solid #bfbfbf;
   background: #fff;
@@ -69,6 +69,13 @@ export const ButtonsAddDel = styled.div`
     border: none;
     background-color: transparent;
     cursor: pointer;
+    font-size: 12px;
+  }
+  button:first-child {
+    padding: 0px 0 0 8px;
+  }
+  button:last-child {
+    padding: 0px 7px 0px 0px;
   }
 
   > p {
@@ -80,9 +87,27 @@ export const ButtonsAddDel = styled.div`
     padding: 0 6px;
     border-left: 1px solid #bfbfbf;
     border-right: 1px solid #bfbfbf;
-    font-size: 1.2rem;
+    font-size: 10px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
+`
+export const ButtonRemove = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  font-size: 1.4rem;
+  padding: 5px 6.5px;
+  border-radius: 50%;
+
+  margin: 0;
+  position: absolute;
+  z-index: 999999;
+  right: -6px;
+  top: -5px;
+  background-color: ${({ theme }) => theme.colors.blackAll};
+  color: ${({ theme }) => theme.colors.white};
 `

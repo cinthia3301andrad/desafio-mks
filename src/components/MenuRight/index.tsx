@@ -20,7 +20,7 @@ export const MenuRight: React.FC = () => {
           ))}
         </S.ContentListProducts>
         <S.ContentTotal>
-          <p>Total:</p> <p data-testid="unique-total">{formatPriceToBRL(getTotalPrice())}</p>
+          <p>Total:</p> <p data-testid="unique-total">{formatPriceToBRL(getTotalPrice)}</p>
         </S.ContentTotal>
         <S.Footer>
           <p>Finalizar Compra</p>

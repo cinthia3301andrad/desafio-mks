@@ -3,7 +3,9 @@ import React, {
   createContext,
   useState,
   useContext,
-  PropsWithChildren
+  PropsWithChildren,
+  useCallback,
+  useMemo
 } from 'react'
 import { toast } from 'react-toastify'
 
@@ -11,10 +13,11 @@ export interface CartContextType {
   items: Product[]
   isOpenMenu: boolean
   addItem: (item: Product) => void
+  removeItem: (id: Product) => void
   getItemCount: (id: number) => number
   incrementItemQuantity: (id: number) => void
   decrementItemQuantity: (id: number) => void
-  getTotalPrice: () => number
+  getTotalPrice:  number
   openMenu: () => void
   closeMenu: () => void
 }
@@ -25,11 +28,10 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   const [items, setItems] = useState<Product[]>([])
   const [isOpenMenu, setIsOpeMenu] = useState(false)
 
-  const openMenu = () => setIsOpeMenu(true)
+  const openMenu = useCallback(() => setIsOpeMenu(true), [])
+  const closeMenu = useCallback(() => setIsOpeMenu(false), [])
 
-  const closeMenu = () => setIsOpeMenu(false)
-
-  const addItem = (newItem: Product) => {
+  const addItem = useCallback((newItem: Product) => {
     setItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex(
         (item) => item.id === newItem.id
@@ -56,17 +58,20 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
       draggable: true,
       progress: undefined
     })
-  }
+  }, [])
+  const removeItem = useCallback((id: number) => {
+    setItems((prevItems) => prevItems.filter(item => item.id !== id));
+  }, []);
 
-  const incrementItemQuantity = (id: number) => {
+  const incrementItemQuantity = useCallback((id: number) => {
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
       )
     )
-  }
+  }, [])
 
-  const decrementItemQuantity = (id: number) => {
+  const decrementItemQuantity = useCallback((id: number) => {
     setItems((prevItems) =>
       prevItems
         .map((item) =>
@@ -76,17 +81,22 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         )
         .filter((item) => item?.quantity > 0)
     )
-  }
-  const getItemCount = (id: number) => {
-    const item = items.find((item) => item.id === id)
-    return item ? item?.quantity || 0 : 0
-  }
-  const getTotalPrice = () => {
+  }, [])
+
+
+  const getItemCount = useCallback(
+    (id: number) => {
+      const item = items.find((item) => item.id === id)
+      return item ? item?.quantity || 0 : 0
+    },
+    [items]
+  )
+  const getTotalPrice = useMemo(() => {
     return items.reduce((total, item) => {
       const itemPrice = parseFloat(item.price.replace(',', '.'))
       return total + itemPrice * (item.quantity || 1)
     }, 0)
-  }
+  }, [items])
 
   return (
     <CartContext.Provider
@@ -99,7 +109,8 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         getTotalPrice,
         isOpenMenu,
         openMenu,
-        closeMenu
+        closeMenu, 
+        removeItem
       }}
     >
       {' '}

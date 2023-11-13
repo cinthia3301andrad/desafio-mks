@@ -55,6 +55,7 @@ export const ContentListProducts = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-top: 50px;
+  padding-top: 10px;
   overflow-y: scroll;
   height: 65%;
   padding-bottom: 10px;
