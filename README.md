@@ -1,4 +1,4 @@
-# Nome da Aplicação
+# Desafio MKS
 
 Esta aplicação é uma loja online desenvolvida como parte de um desafio técnico. O objetivo principal é consumir uma API REST de produtos para exibir a lista de produtos da loja e gerenciar um carrinho de compras.
 
