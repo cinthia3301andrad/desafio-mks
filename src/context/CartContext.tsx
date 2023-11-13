@@ -13,11 +13,11 @@ export interface CartContextType {
   items: Product[]
   isOpenMenu: boolean
   addItem: (item: Product) => void
-  removeItem: (id: Product) => void
+  removeItem: (id: number) => void
   getItemCount: (id: number) => number
   incrementItemQuantity: (id: number) => void
   decrementItemQuantity: (id: number) => void
-  getTotalPrice:  number
+  getTotalPrice: number
   openMenu: () => void
   closeMenu: () => void
 }
@@ -60,8 +60,8 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
     })
   }, [])
   const removeItem = useCallback((id: number) => {
-    setItems((prevItems) => prevItems.filter(item => item.id !== id));
-  }, []);
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id))
+  }, [])
 
   const incrementItemQuantity = useCallback((id: number) => {
     setItems((prevItems) =>
@@ -82,7 +82,6 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         .filter((item) => item?.quantity > 0)
     )
   }, [])
-
 
   const getItemCount = useCallback(
     (id: number) => {
@@ -109,7 +108,7 @@ export const CartProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         getTotalPrice,
         isOpenMenu,
         openMenu,
-        closeMenu, 
+        closeMenu,
         removeItem
       }}
     >
