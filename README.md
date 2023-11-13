@@ -6,6 +6,7 @@ Esta aplicação é uma loja online desenvolvida como parte de um desafio técni
 
 - **Loja**: Apresenta uma lista de produtos obtidos da API, com um shimmer/skeleton implementado durante o carregamento dos dados.
 - **Carrinho**: Permite aos usuários adicionar produtos, ajustar quantidades e visualizar o total.
+- **Modo Escuro (Dark Mode)**: Oferece suporte para um tema escuro, melhorando a acessibilidade e a experiência do usuário durante o uso noturno ou em ambientes com baixa luminosidade.
 
 ## Tecnologias Utilizadas
 
@@ -41,4 +42,4 @@ Execute os testes unitários com `npm test` ou `yarn test`. A cobertura de teste
 
 ## Deployment
 
-A aplicação está hospedada em [Link do Deploy] - sinta-se à vontade para visitar e explorar a versão online da loja.
+A aplicação está hospedada na Vercel e pode ser acessada através deste link: [Desafio MKS na Vercel](https://desafio-mbghyavqo-cinthia3301andrad.vercel.app/). Sinta-se à vontade para visitar e explorar a versão online da loja.
