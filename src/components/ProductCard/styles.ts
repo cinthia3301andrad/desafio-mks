@@ -7,7 +7,7 @@ export const ProductCardContainer = styled.div`
   justify-content: space-between;
   padding: 18px 14px 0 14px;
   width: 218px;
-  height: 285px;
+  height: 295px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: #fff;

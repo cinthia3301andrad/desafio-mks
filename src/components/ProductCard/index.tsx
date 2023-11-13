@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 import IconShopBag from '@/icons/IconShopBag'
-import theme from '@/styles/theme'
+import { theme } from '@/styles/theme'
 import { Product } from '@/types'
 
 import { formatPriceToBRL } from '@/utils/stringsFormat'

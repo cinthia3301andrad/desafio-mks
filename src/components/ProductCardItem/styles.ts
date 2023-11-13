@@ -37,7 +37,7 @@ export const ProductInfo = styled.div`
 `
 
 export const ProductTitle = styled.h2`
-  color: ${({ theme }) => theme.colors.secundary};
+  color: ${({ theme }) => theme.colors.black};
 
   font-size: 1.5rem;
   font-style: normal;

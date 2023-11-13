@@ -22,6 +22,10 @@ const ProductList: React.FC = () => {
         <ProductSkeleton />
         <ProductSkeleton />
         <ProductSkeleton />
+        <ProductSkeleton />
+        <ProductSkeleton />
+        <ProductSkeleton />
+        <ProductSkeleton />
       </S.ContainerProductsList>
     )
   }

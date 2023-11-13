@@ -5,7 +5,7 @@ export const ContainerHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+ position: relative;
   width: 100%;
 
   height: 100px;
@@ -76,7 +76,24 @@ export const ButtonCart = styled.button`
   ${({ theme }) => css`
     ${theme.breakpoints.sm} {
       width: 70px;
-  height: 35px;
+      height: 35px;
+      margin-right: 30px;
     }
   `}
+`
+
+export const ButtonToggleTheme = styled.div`
+position: absolute;
+
+right: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+
+  padding: 10px;
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 `

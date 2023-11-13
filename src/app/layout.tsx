@@ -1,11 +1,10 @@
+
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
-
 import { DefaultLayout } from '@/layouts/DefaultLayout'
 import StyledComponentsRegistry from '@/lib/registry_styled_components'
-import { Header } from '../components/Header'
-
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const montserrat = Montserrat({
   weight: ['300', '400', '600'],
@@ -16,8 +15,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'MKS Sistemas',
-  description:
-    'Loja de vendas'
+  description: 'Loja de vendas'
 }
 
 export default function RootLayout({
@@ -26,16 +24,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="pt-BR"
-      className={montserrat.className}
-    >
+    <html lang="pt-BR" className={montserrat.className}>
       <body>
         <StyledComponentsRegistry>
-       
-       
+          <ThemeProvider>
             <DefaultLayout>{children}</DefaultLayout>
-        
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
