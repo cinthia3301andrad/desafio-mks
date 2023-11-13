@@ -42,4 +42,4 @@ Execute os testes unitários com `npm test` ou `yarn test`. A cobertura de teste
 
 ## Deployment
 
-A aplicação está hospedada na Vercel e pode ser acessada através deste link: [Desafio MKS na Vercel](https://desafio-mbghyavqo-cinthia3301andrad.vercel.app/). Sinta-se à vontade para visitar e explorar a versão online da loja.
+A aplicação está hospedada na Vercel e pode ser acessada através deste link: [Desafio MKS na Vercel](https://desafio-mks-eight.vercel.app/). Sinta-se à vontade para visitar e explorar a versão online da loja.
